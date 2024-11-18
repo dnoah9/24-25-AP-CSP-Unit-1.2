@@ -18,12 +18,12 @@ font_setup = ("Arial", 20, "normal")
 spot_size = 2
 spot_color = 'pink'
 spot_shape = "turtle"
-timer = 5
+timer = 2
 counter_interval = 1000
 timer_up = False
 score = 0
 leaderboard_file_name = "a122_leaderboard.txt"
-player_name = input("What is your name?")
+player_name = input("Enter player name:")
 
 # -----initialize the turtles-----
 spot = trtl.Turtle()
@@ -56,7 +56,6 @@ def countdown():
     if timer <= 0:
         counter.write("Time's Up", font=font_setup)
         timer_up = True
-        manage_leaderboard()
     else:
         counter.write("Timer: " + str(timer), font=font_setup)
         timer -= 1
@@ -113,10 +112,7 @@ def start_game():
     spot.onclick(spot_clicked)
     counter.getscreen().ontimer(countdown, counter_interval)
 
-# Add this function to your game code
-
-# manages the leaderboard for top 5 scorers
-def manage_leaderboard():
+def manage_leaderboard(leaderboard_file_name=None):
 
   global score
   global spot
@@ -135,10 +131,8 @@ def manage_leaderboard():
 # ----------events----------
 start_game()
 wn = trtl.Screen()
-wn.bgcolor("green")
+wn.bgcolor("white smoke")
 wn.mainloop()
-
-
 
 
 
