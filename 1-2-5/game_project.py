@@ -1,11 +1,16 @@
-
+import turtle
 import turtle as trtl
-
-
+pong_ball=turtle.Turtle()
+wn = trtl.Screen()
+wn.bgcolor('lightblue')
 
 #player list
 Player1_score=0
 Player2_score=0
+
+#game configuration
+
+
 
 
 
@@ -33,6 +38,14 @@ rightpaddle.shape("square")
 rightpaddle.color("white")
 rightpaddle.shapesize(stretch_wid=5,stretch_len=1)
 
-wn = trtl.Screen()
-wn.bgcolor('black')
+
+#pong
+pong_ball.goto(0,0)
+pong_ball.shape("circle")
+pong_ball.color("white")
+pong_ball.shapesize(stretch_wid=1,stretch_len=1)
+
+
+
+
 wn.mainloop()
